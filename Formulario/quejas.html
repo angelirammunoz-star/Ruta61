@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantilla de Formulario - Registro e Inicio de Sesión</title>
+    <style>
+        :root {
+            --fondo-pagina: #FAE664; /* Cambia este color o pon url('imagen.jpg') */
+            --color-tarjeta: #ffffff;
+        }
+
+        body {
+            background: var(--fondo-pagina);
+            font-family: sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            
+            /* Centrado del formulario en pantalla */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        form {
+            background-color: var(--color-tarjeta);
+            padding: 30px;
+            max-width: 500px;
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        /* Espaciado simple para no encimar elementos */
+        div {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        fieldset {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="#" method="POST" enctype="multipart/form-data">
+<h2>Reportes&nbsp;</h2>
+<fieldset>
+    <legend>Quejas y sugerencias&nbsp;&nbsp;</legend>
+<div>
+      <label for="biografia">Redacta tu reporte con fecha, hora y unidad&nbsp; <br>
+      agregar numero telefonico del usuario&nbsp; &nbsp;</label>
+                <textarea id="biografia" name="biografia" rows="4" placeholder="Escribe tu reporte..."></textarea>
+    </div>
+      </fieldset>
+</form>
+
+</body>
+</html>

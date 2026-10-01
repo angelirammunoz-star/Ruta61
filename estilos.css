@@ -1,0 +1,563 @@
+:root{
+  --yellow: #FADB32;
+  --yellow-dark:#d9a900;
+  --black:#111;
+  --gray:#666;
+  --line:#222;
+  --paper:#fff;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:#fff;
+  color:var(--black);
+  font-family:Georgia,"Times New Roman",serif;
+  width: 100%;
+  overflow-x: hidden;
+}
+button,a{font:inherit}
+a{color:inherit;text-decoration:none}
+
+.site{
+  width: 100%;
+  max-width: 1280px;
+  min-height:100vh;
+  margin:0 auto;
+  padding:28px 42px 42px;
+}
+
+/* ---------- Header ---------- */
+.header{
+  display:grid;
+  grid-template-columns:360px 1fr;
+  align-items:start;
+  column-gap:70px;
+  margin-bottom:42px;
+}
+.brand{
+  width:330px;
+  height:210px;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+}
+.brand img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+.nav-wrap{padding-top:8px}
+.nav-title{
+  text-align:center;
+  font-size:30px;
+  line-height:1;
+  font-weight:1000;
+  margin-bottom:12px;
+}
+.nav{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  border:1px solid var(--line);
+}
+.nav a, .nav2 a{
+  min-height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:15px 20px;
+  border-right:1px solid var(--line);
+  font-size:24px;
+  line-height:1.08;
+  transition:.18s ease;
+  font-family:Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", "sans-serif";
+  font-weight: 200;
+}
+.nav a:last-child{border-right:0}
+.nav a:hover,.nav a.active, .nav2 a:hover{
+  background:var(--yellow);
+}
+
+/* ---------- Shared ---------- */
+.page-title{
+  display:inline-flex;
+  min-height:64px;
+  align-items:center;
+  justify-content:center;
+  border:1px solid var(--line);
+  padding:10px 28px;
+  font-size:34px;
+  line-height:1;
+  margin:0 0 28px;
+  background:#fff;
+}
+.section-label{
+  border:1px solid var(--line);
+  min-height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:10px 18px;
+  font-size:28px;
+  line-height:1.08;
+  background:#fff;
+  transition:.18s ease;
+}
+.section-label:hover{background:#fafafa}
+.text{
+  font-size:19px;
+  line-height:1.32;
+}
+.small{font-size:17px}
+.accent{color:#a47a00;font-weight:700}
+.yellow-bar{
+  height:7px;
+  background:var(--yellow);
+  width:100%;
+}
+.back-top{
+  position:fixed;
+  right:28px;
+  bottom:24px;
+  width:48px;
+  height:48px;
+  border:1px solid #111;
+  background:var(--yellow);
+  font-family:Arial,sans-serif;
+  font-weight:800;
+  cursor:pointer;
+  box-shadow:0 2px 8px #0002;
+  z-index: 100;
+}
+
+/* ---------- Home ---------- */
+.home{
+  min-height:760px;
+}
+.home-main{
+  display:grid;
+  grid-template-columns:455px 1fr;
+  gap:30px;
+  align-items:center;
+  margin-top:15px;
+}
+.home-copy{
+  padding:30px 0 0 8px;
+  text-align:center;
+}
+.home-copy h1{
+  margin:0 0 4px;
+  font-size:48px;
+  line-height:1;
+}
+.home-copy p{
+  margin:0 auto;
+  max-width:430px;
+  font-size:28px;
+  line-height:1.22;
+}
+.home-vehicle{
+  height:590px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.home-vehicle img{
+  width:610px;
+  height:610px;
+  object-fit:contain;
+  max-width: 100%;
+}
+
+/* ---------- General info ---------- */
+.info-page{padding-top:0}
+.info-layout{
+  display:grid;
+  grid-template-columns:860px 330px;
+  column-gap:30px;
+  align-items:start;
+}
+.info-list{
+  display:grid;
+  grid-template-columns:275px 1fr;
+  row-gap:26px;
+  column-gap:18px;
+}
+.info-list .section-label{min-height:68px}
+.info-list .text{padding:5px 0 0}
+.route-box{
+  margin-top:38px;
+  display:grid;
+  grid-template-columns:485px 1fr;
+  gap:28px;
+  align-items:start;
+}
+.route-map{
+  width:485px;
+  max-width: 100%;
+  border:1px solid #aaa;
+  display:block;
+}
+.route-copy{
+  padding-top:15px;
+}
+.route-copy .route-intro{
+  font-size:23px;
+  line-height:1.2;
+  margin:0 0 46px;
+}
+.route-data{
+  display:grid;
+  grid-template-columns:280px 1fr;
+  gap:22px;
+  align-items:start;
+}
+.route-menu{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+.route-menu button{
+  min-height:66px;
+  border:1px solid #222;
+  background:#fff;
+  cursor:pointer;
+  font-size:26px;
+  transition:.18s ease;
+}
+
+.route-menu button:hover,
+.route-menu button.selected{
+  background:var(--yellow);
+}
+.route-panel{
+  min-height:310px;
+  padding:0 5px;
+}
+.route-panel h3{
+  margin:0 0 12px;
+  font-size:28px;
+}
+.route-panel p{
+  margin:0;
+  font-size:19px;
+  line-height:1.35;
+}
+.route-side{
+  padding-top:82px;
+}
+.route-side .side-card{
+  border:1px solid #222;
+  min-height:66px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-size:27px;
+  margin-bottom:20px;
+  cursor:pointer;
+  background:#fff;
+}
+.route-side .side-card:hover{background:var(--yellow)}
+
+/* ---------- User ---------- */
+.user-layout{
+  display:grid;
+  grid-template-columns:830px 340px;
+  column-gap:45px;
+  align-items:start;
+}
+.user-list{
+  display:grid;
+  grid-template-columns:275px 1fr;
+  row-gap:30px;
+  column-gap:22px;
+}
+.user-list .text{padding-top:7px}
+.user-bus{
+  height:480px;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+}
+.user-bus img{
+  width:330px;
+  height:480px;
+  object-fit:contain;
+  max-width: 100%;
+}
+.rules{
+  padding-left:10px;
+}
+.rules ol{
+  margin:0;
+  padding-left:28px;
+  font-size:21px;
+  line-height:1.34;
+}
+.access-copy{
+  font-size:22px;
+  line-height:1.35;
+}
+.contacts{
+  margin-top:12px;
+  font-size:21px;
+  line-height:1.45;
+}
+.contact{
+  display:inline-block;
+  border-bottom:2px solid var(--yellow);
+  margin:3px 0;
+}
+.contact:hover{background:#fff4b7}
+.footer-art{
+  width:100%;
+  height:270px;
+  object-fit:contain;
+  margin-top:58px;
+}
+.footer-note{
+  text-align:center;
+  font-family:Arial,sans-serif;
+  font-size:12px;
+  color:#777;
+  margin-top:-28px;
+}
+
+/* ---------- Footer ---------- */
+.site-footer{
+  margin-top:55px;
+  border-top:7px solid var(--yellow);
+  padding-top:14px;
+  display:flex;
+  justify-content:space-between;
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  color:#555;
+}
+
+
+/* ========================================================== */
+/* MEDIA QUERIES PARA RESPONSIVIDAD                           */
+/* ========================================================== */
+
+/* --- TABLETS (Ancho menor o igual a 1024px) --- */
+@media screen and (max-width: 1024px) {
+  .site {
+    padding: 20px;
+  }
+
+  .header {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+    justify-items: center;
+  }
+
+  .brand {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .home-main {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .home-vehicle {
+    height: auto;
+  }
+
+  .home-vehicle img {
+    width: 100%;
+    height: auto;
+  }
+
+  .info-layout,
+  .user-layout {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
+
+  .route-box {
+    grid-template-columns: 1fr;
+  }
+
+  .route-map {
+    width: 100%;
+  }
+
+  .route-side {
+    padding-top: 20px;
+  }
+}
+
+/* --- CELULARES (Ancho menor o igual a 768px) --- */
+@media screen and (max-width: 768px) {
+  .site {
+    padding: 15px;
+  }
+
+  .nav {
+    grid-template-columns: 1fr;
+  }
+
+  .nav a, .nav2 a {
+    min-height: 50px;
+    font-size: 20px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .page-title {
+    font-size: 26px;
+    min-height: 50px;
+    padding: 8px 16px;
+  }
+
+  .home-copy h1 {
+    font-size: 36px;
+  }
+
+  .home-copy p {
+    font-size: 22px;
+  }
+
+  .info-list,
+  .route-data,
+  .user-list {
+    grid-template-columns: 1fr;
+    row-gap: 15px;
+  }
+
+  .section-label {
+    min-height: 50px;
+    font-size: 22px;
+  }
+
+  .text, .rules ol, .access-copy, .contacts {
+    font-size: 17px;
+  }
+
+  .route-copy .route-intro {
+    font-size: 19px;
+    margin-bottom: 20px;
+  }
+
+  .route-panel h3 {
+    font-size: 22px;
+  }
+
+  .user-bus {
+    height: auto;
+  }
+
+  .user-bus img {
+    height: auto;
+    max-height: 350px;
+  }
+
+  .footer-art {
+    height: auto;
+    max-height: 200px;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .back-top {
+    right: 15px;
+    bottom: 15px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .site {
+    padding: 5px;
+  }
+
+  .nav {
+    grid-template-columns: 1fr;
+  }
+
+  .nav a, .nav2 a {
+    min-height: 30px;
+    font-size: 12px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .page-title {
+    font-size: 15px;
+    min-height: 30px;
+    padding: 5px 10px;
+  }
+
+  .home-copy h1 {
+    font-size: 15px;
+  }
+
+  .home-copy p {
+    font-size: 10px;
+  }
+
+  .info-list,
+  .route-data,
+  .user-list {
+    grid-template-columns: 1fr;
+    row-gap: 15px;
+  }
+
+  .section-label {
+    min-height: 30px;
+    font-size: 10px;
+  }
+
+  .text, .rules ol, .access-copy, .contacts {
+    font-size: 10px;
+  }
+
+  .route-copy .route-intro {
+    font-size: 10px;
+    margin-bottom: 12px;
+  }
+
+  .route-panel h3 {
+    font-size: 12px;
+  }
+
+  .user-bus {
+    height: auto;
+  }
+
+  .user-bus img {
+    height: auto;
+    max-height: 50px;
+  }
+
+  .footer-art {
+    height: auto;
+    max-height: 50px;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .back-top {
+    right: 15px;
+    bottom: 15px;
+    width: 40px;
+    height: 40px;
+  }
+}
